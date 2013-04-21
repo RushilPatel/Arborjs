@@ -1,0 +1,38 @@
+
+<html lang="en">
+<head>
+	<title>Complete Graph</title>
+	<script src="Scripts/jquery.min.js"></script>
+	<script src="Scripts/arbor.js"></script>  
+	<script src="Scripts/graphics.js"></script>
+	<script src="Scripts/renderer.js"></script>
+
+</head>
+<body align="center" bgcolor="#f9f9f9">
+  <canvas id="viewport" width="1200" height="800"></canvas>
+  
+	<script>
+	
+		var sys = arbor.ParticleSystem(1000, 400,1);
+		sys.parameters({gravity:true});
+		sys.renderer = Renderer("#viewport") ;
+		
+		var problem1 = sys.addNode('1',{'color':'green','shape':'dot','label':'Node 1'});
+		var problem2 = sys.addNode('2',{'color':'green','shape':'dot','label':'Node 2'});
+		var problem3 = sys.addNode('3',{'color':'green','shape':'dot','label':'Node 3'});
+		var problem4 = sys.addNode('4',{'color':'green','shape':'dot','label':'Node 4'});
+		var problem5 = sys.addNode('5',{'color':'green','shape':'dot','label':'Node 5'});
+		sys.addEdge(problem1, problem2);
+		sys.addEdge(problem1, problem3);
+		sys.addEdge(problem1, problem4);
+		sys.addEdge(problem1, problem5);
+		sys.addEdge(problem2, problem3);
+		sys.addEdge(problem2, problem4);
+		sys.addEdge(problem2, problem5);
+		sys.addEdge(problem3, problem4);
+		sys.addEdge(problem3, problem5);
+		sys.addEdge(problem4, problem5);
+		
+	</script>
+</body>
+</html>
